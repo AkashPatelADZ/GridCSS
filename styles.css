@@ -12,8 +12,15 @@
 }
 
 body {
-  background-image: conic-gradient(from 0.5turn at center left, lime, cyan);
-  padding: 1.8rem;
+  background-image: conic-gradient(
+    at 125% 50%,
+    #b78cf7,
+    #ff7c94,
+    #ffcf0d,
+    #ff7c94,
+    #b78cf7
+  );
+  padding: 3rem;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -116,7 +123,7 @@ header > a:hover {
   background-image: conic-gradient(from -90deg at 50% 105%, white, orchid);
 }
 
-.card a:hover {
+a:hover {
   transform: scale(1.1);
 }
 
