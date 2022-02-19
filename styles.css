@@ -12,7 +12,7 @@
 }
 
 body {
-  background-color: #ccc;
+  background-image: conic-gradient(from 0.5turn at center left, lime, cyan);
   padding: 1.8rem;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -20,6 +20,7 @@ body {
 a {
   text-decoration: none;
   color: var(--dark);
+  transition: 400ms;
 }
 
 /* specific rules */
@@ -38,12 +39,15 @@ header > a {
   background-color: var(--lighter);
   box-shadow: var(--shadow);
 
-  transition: 200ms;
+  /* transition: 300ms; */
 }
 
 header > a:hover {
   background-color: var(--dark);
   color: var(--white);
+  transform: scale(1.1);
+  /* box-shadow: 0 0 12px 4px rebeccapurple; */
+  box-shadow: 4px 4px 2px cyan, 8px 8px rebeccapurple;
 }
 
 .presence-tab {
@@ -69,6 +73,11 @@ header > a:hover {
 
   color: var(--white);
   font-size: 1.3em;
+}
+
+.presence .link-btn:hover {
+  transform: scale(1.1) rotate(-5deg);
+  box-shadow: 0 0 8px 10px rgba(10, 148, 68, 0.685);
 }
 
 .card-mem {
@@ -103,6 +112,14 @@ header > a:hover {
   align-items: center;
 }
 
+.card:hover {
+  background-image: conic-gradient(from -90deg at 50% 105%, white, orchid);
+}
+
+.card a:hover {
+  transform: scale(1.1);
+}
+
 .presence-tab .card p {
   font-size: 3em;
 }
@@ -134,7 +151,12 @@ header > a:hover {
   margin: 2rem 0;
   padding: 2rem;
   gap: 20px;
-  background-color: var(--lighter);
+  /* background-color: var(--lighter); */
+  background-image: conic-gradient(
+    from -90deg at 50% 105%,
+    white,
+    rebeccapurple
+  );
   box-shadow: var(--shadow);
 }
 
@@ -177,6 +199,7 @@ footer {
 
   header {
     grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
   }
 
   .business-card {
