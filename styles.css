@@ -140,6 +140,9 @@ header > a:hover {
 
 .business-img {
   width: 100%;
+  min-height: 380px;
+  background: url("/images/business-web.jpg") no-repeat center;
+  background-size: cover;
 }
 
 .business-text h3 {
@@ -165,7 +168,7 @@ footer {
   text-align: center;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 480px) {
   .presence-tab {
     grid-template-areas:
       "presence presence"
