@@ -1,0 +1,193 @@
+/* global styles */
+
+:root {
+  --dark: #333;
+  --lighter: #ddd;
+  --white: #fff;
+  --shadow: 0 1px 6px #777;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ccc;
+  padding: 1.8rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark);
+}
+
+/* specific rules */
+header {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  font-size: 1.1rem;
+}
+
+header > a {
+  display: block;
+  text-align: center;
+  padding: 0.8rem;
+
+  background-color: var(--lighter);
+  box-shadow: var(--shadow);
+
+  transition: 200ms;
+}
+
+header > a:hover {
+  background-color: var(--dark);
+  color: var(--white);
+}
+
+.presence-tab {
+  display: grid;
+  margin: 3em 0;
+  gap: 15px;
+  grid-template-areas:
+    "presence"
+    "card-mem"
+    "card-pro-mem";
+}
+
+.presence {
+  padding: 3em 2em;
+  width: 100%;
+  min-height: 40vh;
+  grid-area: presence;
+
+  background-image: url("/images/presence.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: var(--white);
+  font-size: 1.3em;
+}
+
+.card-mem {
+  grid-area: card-mem;
+}
+
+.card-pro-mem {
+  grid-area: card-pro-mem;
+}
+
+.link-btn {
+  color: var(--white);
+  background-color: var(--dark);
+  display: inline-block;
+
+  padding: 0.7em 1em;
+  margin: 1em 0;
+  border-radius: 8px;
+}
+
+.presence > .link-btn {
+  background-color: aqua;
+  color: black;
+}
+
+.card {
+  background-color: var(--lighter);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
+.presence-tab .card p {
+  font-size: 3em;
+}
+
+.presence-tab .card * {
+  margin: 1.8rem auto;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2rem;
+}
+
+.features > .card {
+  padding: 2rem;
+  text-align: center;
+}
+
+.fa {
+  font-size: 4em;
+  color: var(--dark);
+}
+
+.business-card {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 2rem 0;
+  padding: 2rem;
+  gap: 20px;
+  background-color: var(--lighter);
+  box-shadow: var(--shadow);
+}
+
+.business-img {
+  width: 100%;
+}
+
+.business-text h3 {
+  font-size: 1.6em;
+}
+
+.gallery {
+  margin: 2rem 0;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.gallery img {
+  width: 100%;
+  box-shadow: var(--shadow);
+}
+
+footer {
+  background-color: var(--dark);
+  color: goldenrod;
+  padding: 20px;
+  text-align: center;
+}
+
+@media (min-width: 500px) {
+  .presence-tab {
+    grid-template-areas:
+      "presence presence"
+      "card-mem card-pro-mem";
+  }
+
+  header {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .business-card {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 720px) {
+  .presence-tab {
+    grid-template-areas:
+      "presence card-mem"
+      "presence card-pro-mem";
+  }
+  .presence-tab .card {
+    min-width: 300px;
+  }
+}
